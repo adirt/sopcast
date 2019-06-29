@@ -10,10 +10,10 @@ import (
 )
 
 var channelCmd = &cobra.Command{
-	Use:   "channel",
-	Short: "SopCast channel to stream",
+	Use:     "channel",
+	Short:   "SopCast channel to stream",
 	Example: "sopcast channel 123456",
-	Args: cobra.ExactArgs(1),
+	Args:    cobra.ExactArgs(1),
 	RunE: func(cmd *cobra.Command, args []string) error {
 		channel := args[0]
 		if err := validateChannel(channel); err != nil {

@@ -10,14 +10,14 @@ import (
 )
 
 var urlCmd = &cobra.Command{
-	Use:   "url",
-	Short: "SopCast URL to stream",
+	Use:     "url",
+	Short:   "SopCast URL to stream",
 	Example: fmt.Sprintf("sopcast url %s/123456", sopcast.Broker),
-	Args: cobra.ExactArgs(1),
+	Args:    cobra.ExactArgs(1),
 	RunE: func(cmd *cobra.Command, args []string) error {
-        url := args[0]
-        if err := validateUrl(url); err != nil {
-        	return err
+		url := args[0]
+		if err := validateUrl(url); err != nil {
+			return err
 		}
 		return sopcast.Stream(url)
 	},
